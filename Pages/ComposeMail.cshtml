@@ -1,0 +1,24 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model ComposeMailModel
+@{
+    ViewData["Title"] = "Compose New Email";
+}
+
+<h2>Compose New Email</h2>
+
+<form method="post">
+    <div class="mb-3">
+        <label for="recipient" class="form-label">To:</label>
+        <input id="recipient" name="Recipient" type="email" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label for="subject" class="form-label">Subject:</label>
+        <input id="subject" name="Subject" type="text" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label for="body" class="form-label">Message:</label>
+        <textarea id="body" name="Body" rows="5" class="form-control" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Send</button>
+</form>

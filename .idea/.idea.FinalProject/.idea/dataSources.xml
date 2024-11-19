@@ -8,6 +8,7 @@
       <jdbc-url>jdbc:sqlserver://celestialfinalproject.database.windows.net :1433;database=Finalproject</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+<<<<<<< HEAD
     <data-source source="LOCAL" name="Azure SQL Database [2]" uuid="19fb5341-2e16-4d0c-8311-66bcc011d8cb">
       <driver-ref>azure.ms</driver-ref>
       <synchronize>true</synchronize>
@@ -15,5 +16,7 @@
       <jdbc-url>jdbc:sqlserver://celestialfinalproject.database.windows.net :1433;database=Finalproject</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+=======
+>>>>>>> 4f74a9664c41ed36d7ae4fa9effc1d036e3655d9
   </component>
 </project>
