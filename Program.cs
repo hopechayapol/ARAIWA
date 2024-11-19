@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using FinalProject.Data; // Namespace สำหรับ DbContext
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -30,13 +29,6 @@ builder.Services.AddDefaultIdentity<FinalProjectUser>(options =>
 // เพิ่มบริการ Razor Pages
 builder.Services.AddRazorPages();
 
-// เพิ่ม EmailService สำหรับการส่งอีเมล
-builder.Services.AddSingleton<EmailService>();
-
-// เพิ่มบริการอื่น ๆ (เช่น Authentication หรือ Custom Services หากมี)
-builder.Services.AddAuthentication();
-builder.Services.AddAuthorization();
-
 var app = builder.Build();
 
 // กำหนด Middleware สำหรับโปรเจกต์
@@ -50,7 +42,6 @@ else
     app.UseHsts();
 }
 
-// ใช้ HTTPS
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
@@ -60,6 +51,5 @@ app.UseAuthentication(); // ใช้ Authentication Middleware
 app.UseAuthorization();  // ใช้ Authorization Middleware
 
 app.MapRazorPages();      // แมปเส้นทาง Razor Pages
-app.MapDefaultControllerRoute(); // สำหรับ Controllers
 
 app.Run();

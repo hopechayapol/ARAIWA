@@ -32,6 +32,14 @@ public class EmailService
         };
         mailMessage.To.Add(recipient);
 
-        await smtpClient.SendMailAsync(mailMessage);
+        try
+        {
+            await smtpClient.SendMailAsync(mailMessage);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error while sending email: {ex.Message}");
+            throw; // ส่งต่อ Exception ให้กับส่วนที่เรียกใช้งาน เพื่อให้สามารถจัดการต่อได้
+        }
     }
 }
